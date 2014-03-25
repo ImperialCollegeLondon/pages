@@ -1,6 +1,35 @@
-dt {
-  font-weight: bold;
+body {
+  font-size: 14pt;
+  line-height: 18pt;
+  max-width: 1024px;
+  font-weight: 300;
 }
 section {
   border-top: 1px solid #CCC;
+}
+dt {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+h3 {
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.description {
+  padding: 1em 2em;
+  border: 1px solid #EEE;
+  border-width: 1px 0px;
+}
+.type {
+  font-family: "courier new";
+  display: inline-block;
+  color: #9a9a9a;
+  margin: 0em 1em 0em 0em;
+  max-width: 10em;
+  vertical-align: top;
 }
