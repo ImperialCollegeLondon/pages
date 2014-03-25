@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>http://mydomain.net/pages/index.html</loc>
+		<lastmod>2014-03-25T11:20:53.981Z</lastmod>
+
+		<changefreq>weekly</changefreq>
+
+		<priority>0.5</priority>
+
+	</url>
+	<url>
+		<loc>http://mydomain.net/grunt-swig/templates/robots.txt.html</loc>
+		<lastmod>2014-03-25T11:20:53.981Z</lastmod>
+
+		<changefreq>weekly</changefreq>
+
+		<priority>0.5</priority>
+
+	</url>
+	<url>
+		<loc>http://mydomain.net/grunt-swig/templates/sitemap.xml.html</loc>
+		<lastmod>2014-03-25T11:20:53.981Z</lastmod>
+
+		<changefreq>weekly</changefreq>
+
+		<priority>0.5</priority>
+
+	</url>
+</urlset>
