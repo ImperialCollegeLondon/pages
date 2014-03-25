@@ -4,3 +4,11 @@ serve:
     - 'connect'
     - 'open'
     - 'watch'
+
+build:
+    - 'less:dev'
+    - 'copy:build'
+    - 'useminPrepare'
+    - 'concat'
+    - 'cssmin'
+    - 'usemin'

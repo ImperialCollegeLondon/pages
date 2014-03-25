@@ -5,5 +5,5 @@ module.exports = {
             'build/css/gismoh.css' : 'app/css/gismoh.less',
             'build/css/phylocanvas.css' : 'app/css/phylocanvas.less'
         }
-    }
+    },
 }
