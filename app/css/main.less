@@ -1,0 +1,61 @@
+@gutter : 1em;
+
+body
+{
+    font-family: "Source Sans Pro";
+
+    max-width: 800px;
+    margin: @gutter auto;
+    padding: 0 @gutter;
+}
+
+h1
+{
+
+}
+
+
+ol.breadcrumbs
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    color: #AAA;
+
+    li
+    {
+        margin: 0;
+
+        display: inline-block;
+
+        &:after
+        {
+            color: #CCC;
+            content: ' > ';
+        }
+
+        &:last-of-type:after
+        {
+            content: '';
+        }
+
+        a
+        {
+            text-decoration: none;
+            color: #AAA;
+
+            &:hover
+            {
+              color: #333;
+            }
+        }
+    }
+}
+
+.url-stub
+{
+    font-family: "courier new";
+    margin-top: -1em;
+    font-weight: normal;
+}

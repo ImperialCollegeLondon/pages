@@ -1,0 +1,6 @@
+serve:
+    - 'less:dev'
+    - 'copy:dev'
+    - 'connect'
+    - 'open'
+    - 'watch'
