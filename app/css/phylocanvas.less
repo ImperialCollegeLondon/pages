@@ -1,0 +1,64 @@
+body
+{
+  font-family: Raleway;
+}
+
+p
+{
+    &.lead
+    {
+        font-size: 20pt;
+        line-height: 22pt;
+    }
+
+    &.question
+    {
+         &:before
+        {
+            display: inline-block;
+            font-size: 30pt;
+            color: #CCC;
+            content: 'Q ';
+            font-weight: 300;
+            vertical-align: top;
+            margin-right: 0.5em;
+        }
+
+        font-size: 18pt;
+        font-weight: 100;
+    }
+
+    &.answer
+    {
+        &:before
+        {
+            display: inline-block;
+            font-size: 30pt;
+            color: #CCC;
+            content: 'A ';
+            font-weight: 500;
+            vertical-align: top;
+            margin-right: 0.5em;
+        }
+
+        text-align: right;
+    }
+}
+
+canvas
+{
+    border: 2px solid #CCC;
+    max-width: 100%;
+
+    &:after
+    {
+        content : 'PhyloCanvas';
+        color: #CCC;
+        float: right;
+    }
+}
+
+.light
+{
+    font-weight: 100;
+}

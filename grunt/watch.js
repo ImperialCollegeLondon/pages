@@ -11,7 +11,7 @@ module.exports = {
         }
     },
     html: {
-        files: 'app/**/*.html',
+        files: ['app/**/*.html','app/js/*.js'],
         tasks: ['copy:dev'],
         options: {
           livereload: true,

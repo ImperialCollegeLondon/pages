@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Raleway:100,300,400,500,700:f">
+        <!--build:css(build) /css/phylocanvas.css-->
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/phylocanvas.css">
+        <!--endbuild-->
+
+    </head>
+    <body>
+        <h1><span class="light">Phylo</span>Canvas</h1>
+        <p class="lead">This is a demonstration of the HTML5 Tree-drawing widget PhyloCanvas</p>
+        <p>PhyloCanvas is written entirely in browser-native JavaScript, so using not external libraries, and uses the HTML5 Canvas element</p>
+        <div id="phylo">
+
+        </div>
+        <section>
+            <h2>FAQs</h2>
+            <p class="question">Why Canvas and not SVG?</p>
+            <p class="answer">Both offer significant advantages, but ultimately at the start of the project (2011) the Canvas API was better supported across browers than inline SVG </p>
+        </section>
+
+
+        <!--build:js(app) /js/phylo_demo.js-->
+        <script src="/js/PhyloCanvas.js" type="text/javascript"></script>
+        <script src="/js/phylocanvas_demo.js" type="text/javascript"></script>
+        <!--endbuild-->
+    </body>
+</html>

@@ -11,4 +11,5 @@ build:
     - 'useminPrepare'
     - 'concat'
     - 'cssmin'
+    - 'uglify'
     - 'usemin'
