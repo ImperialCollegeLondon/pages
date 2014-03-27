@@ -269,6 +269,7 @@ var PhyloCanvas = (function(){
            */
           this.div = document.createElement('div');
           this.div.style.display = 'none';
+
           this.div.style.position = 'fixed';
           this.div.style.border = '1px solid #CCCCCC';
           this.div.className = 'contextMenu';
@@ -396,7 +397,15 @@ var PhyloCanvas = (function(){
             this.canvasEl = div;
 
             //Set up the div and canvas element
-            this.canvasEl.style.position = 'relative';
+
+            var curStyle = window.getComputedStyle(this.canvasEl);
+
+            console.debug(curStyle.position);
+            if(curStyle.position == 'static')
+            {
+                this.canvasEl.style.position = 'relative';
+            }
+
             var cl = document.createElement('canvas');
             cl.id = div.id + 'pCanvas';
             cl.className = 'phylocanvas';

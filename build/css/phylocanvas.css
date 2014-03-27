@@ -1,5 +1,12 @@
 body {
   font-family: Raleway;
+  max-width: 1200px;
+  margin: 2em auto;
+  padding: 1rem;
+}
+p,
+h1 {
+  user-select: none;
 }
 p.lead {
   font-size: 20pt;
@@ -33,11 +40,21 @@ p.answer:before {
 canvas {
   border: 2px solid #CCC;
   max-width: 100%;
+  z-index: -1;
 }
 canvas:after {
   content: 'PhyloCanvas';
   color: #CCC;
   float: right;
+}
+#phylo {
+  min-height: 30em;
+}
+pre.code {
+  margin-left: 1em;
+  background-color: #CCC;
+  border-radius: 1em;
+  padding: 0.5em;
 }
 .light {
   font-weight: 100;

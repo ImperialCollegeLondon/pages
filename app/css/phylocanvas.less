@@ -1,14 +1,25 @@
 body
 {
-  font-family: Raleway;
+    font-family: Raleway;
+    max-width: 1200px;
+    margin : 2em auto;
+    padding: 1rem;
+}
+
+p, h1
+{
+    user-select: none;
 }
 
 p
 {
+
     &.lead
     {
         font-size: 20pt;
         line-height: 22pt;
+
+
     }
 
     &.question
@@ -56,6 +67,21 @@ canvas
         color: #CCC;
         float: right;
     }
+
+    z-index: -1;
+}
+
+#phylo
+{
+    min-height: 30em;
+}
+
+pre.code
+{
+    margin-left: 1em;
+    background-color: #CCC;
+    border-radius: 1em;
+    padding: 0.5em;
 }
 
 .light
