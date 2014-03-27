@@ -8,6 +8,5 @@
         phylo.load('data/EARSS.nwk');
     }
 
-
     document.body.onload = init();
 }());
