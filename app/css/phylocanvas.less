@@ -37,6 +37,7 @@ p
 
         font-size: 18pt;
         font-weight: 100;
+        line-height: 22pt;
     }
 
     &.answer
@@ -52,6 +53,8 @@ p
             margin-right: 0.5em;
         }
 
+        line-height: 18pt;
+        
         text-align: right;
     }
 }
@@ -82,9 +85,29 @@ pre.code
     background-color: #CCC;
     border-radius: 1em;
     padding: 0.5em;
+    overflow-x: auto;
 }
 
 .light
 {
     font-weight: 100;
+}
+
+@media (max-width:600px) {
+    body
+    {
+        font-size: 10pt; 
+        line-height: 12pt;
+    }
+    
+    h1
+    {
+        font-size: 24pt;   
+    }
+    
+    p.lead
+    {
+        font-size: 14pt;
+        line-height: 16pt;
+    }
 }
