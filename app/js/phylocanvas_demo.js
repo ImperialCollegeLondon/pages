@@ -5,7 +5,7 @@
 
     function init(){
         var phylo = new PC.Tree('phylo');
-        phylo.load('data/tree.nwk');
+        phylo.load('data/EARSS.nwk');
     }
 
 
