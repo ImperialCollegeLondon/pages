@@ -13,3 +13,10 @@ build:
     - 'cssmin'
     - 'uglify'
     - 'usemin'
+    - 'shell:save_build'
+    - 'bump:build'
+    
+deploy:
+    - 'build'
+    - 'bump'
+    - 'shell:deploy'
