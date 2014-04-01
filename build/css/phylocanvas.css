@@ -52,6 +52,7 @@ canvas:after {
 #phylo {
   box-sizing: border-box;
   min-height: 30em;
+  min-width: 300px;
   width: 49.8%;
   display: inline-block;
 }
@@ -59,6 +60,7 @@ canvas:after {
   box-sizing: border-box;
   display: inline-block;
   height: 30em;
+  min-width: 300px;
   width: 49.8%;
   padding-left: 1em;
   overflow-y: auto;

@@ -11,9 +11,12 @@
 
         for( var b = buttons.length; b--; )
         {
-            console.debug(buttons.length);
 
-            buttons[b].addEventListener('click', phylo[buttons[b].id].bind(phylo));
+            buttons[b].addEventListener('click', function(evt){
+                for(var f = evt.target.parentNode; f && f.tagName !== 'FORM'; f = f.parentNode) {}
+                
+                phylo[this.id].apply(phylo)
+            });
         }
     }
 

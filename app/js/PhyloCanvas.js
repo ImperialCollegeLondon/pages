@@ -399,8 +399,7 @@ var PhyloCanvas = (function(){
             //Set up the div and canvas element
 
             var curStyle = window.getComputedStyle(this.canvasEl);
-
-            console.debug(curStyle.position);
+            
             if(curStyle.position == 'static')
             {
                 this.canvasEl.style.position = 'relative';
