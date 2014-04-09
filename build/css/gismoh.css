@@ -12,6 +12,9 @@ dt {
   margin-top: 0.5em;
   font-style: italic;
 }
+dd {
+  font-weight: 100;
+}
 h3 {
   font-weight: 400;
 }
@@ -38,6 +41,45 @@ a:hover {
   content: 'static';
   color: #9a9a9a;
   font-weight: 200;
+  font-style: normal;
+  margin-right: 0.5em;
+}
+dd.arg-type:before {
+  display: inline-block;
+  width: 6em;
+  color: #9a9a9a;
+  font-weight: 600;
+  font-style: normal;
+  margin-right: 0.5em;
+}
+dd.arg-type.int:before {
+  content: '0,1,2,...';
+}
+dd.arg-type.string:before {
+  content: '""';
+  color: #9a9a9a;
+  font-weight: 600;
+  font-style: normal;
+  margin-right: 0.5em;
+}
+dd.arg-type.date:before {
+  content: 'dd/mm/yyyy';
+  color: #9a9a9a;
+  font-weight: 600;
+  font-style: normal;
+  margin-right: 0.5em;
+}
+dd.arg-type.dict:before {
+  content: '{}';
+  color: #9a9a9a;
+  font-weight: 600;
+  font-style: normal;
+  margin-right: 0.5em;
+}
+dd.arg-type.boolean:before {
+  content: 'true/false';
+  color: #9a9a9a;
+  font-weight: 600;
   font-style: normal;
   margin-right: 0.5em;
 }

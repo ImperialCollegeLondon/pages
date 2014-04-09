@@ -15,8 +15,8 @@ build:
     - 'usemin'
     - 'shell:save_build'
     - 'bump:build'
-    
+
 deploy:
     - 'build'
-    - 'bump'
+    - 'bump:deploy'
     - 'shell:deploy'

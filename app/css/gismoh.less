@@ -20,6 +20,11 @@ dt
     font-style: italic;
 }
 
+dd
+{
+    font-weight: 100;
+}
+
 h3
 {
     font-weight: 400;
@@ -28,7 +33,7 @@ h3
 a
 {
     text-decoration: none;
-    
+
     &:hover
     {
         text-decoration: underline;
@@ -37,7 +42,7 @@ a
 
 .description
 {
-    padding: 1em 2em;   
+    padding: 1em 2em;
     border: 1px solid #EEE;
     border-width: 1px 0px;
 }
@@ -47,18 +52,78 @@ a
     font-family: "courier new";
     display: inline-block;
     color: #9a9a9a;
-    margin: 0em 1em 0em 0em; 
+    margin: 0em 1em 0em 0em;
     max-width: 10em;
     vertical-align: top;
 }
 
 .static:before
 {
-    
+
     content: 'static';
     color: #9a9a9a;
     font-weight: 200;
     font-style: normal;
     margin-right: 0.5em;
-    
+
 }
+
+
+dd
+{
+    &.arg-type
+    {
+        &:before
+        {
+            display: inline-block;
+            width: 6em;
+            color: #9a9a9a;
+            font-weight: 600;
+            font-style: normal;
+            margin-right: 0.5em;
+        }
+
+        &.int:before
+        {
+            content: '0,1,2,...';
+        }
+
+        &.string:before
+        {
+            content: '""';
+            color: #9a9a9a;
+            font-weight: 600;
+            font-style: normal;
+            margin-right: 0.5em;
+        }
+
+        &.date:before
+        {
+            content: 'dd/mm/yyyy';
+            color: #9a9a9a;
+            font-weight: 600;
+            font-style: normal;
+            margin-right: 0.5em;
+        }
+
+        &.dict:before
+        {
+            content: '{}';
+            color: #9a9a9a;
+            font-weight: 600;
+            font-style: normal;
+            margin-right: 0.5em;
+        }
+
+        &.boolean:before
+        {
+            content: 'true/false';
+            color: #9a9a9a;
+            font-weight: 600;
+            font-style: normal;
+            margin-right: 0.5em;
+        }
+    }
+
+}
+
