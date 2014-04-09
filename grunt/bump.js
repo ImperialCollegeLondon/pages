@@ -5,7 +5,6 @@ module.exports = {
     deploy :{
         options:
         {
-            files : ['package.json', 'bower.json'],
             commitFiles : ['dist']
         }
     }
