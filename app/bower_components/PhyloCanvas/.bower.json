@@ -11,6 +11,7 @@
     "commit": "52e57c318d1753dcaeff49c1b128fce705e9d329"
   },
   "_source": "git://github.com/CIPowell/PhyloCanvas.git",
-  "_target": "*",
-  "_originalSource": "PhyloCanvas"
+  "_target": "~1.2.2",
+  "_originalSource": "PhyloCanvas",
+  "_direct": true
 }
