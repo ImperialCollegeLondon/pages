@@ -24,6 +24,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
+p.lead {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
 .description {
   padding: 1em 2em;
   border: 1px solid #EEE;

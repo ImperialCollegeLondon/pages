@@ -2,12 +2,12 @@ module.exports = {
     options: {
         browsers: ['last 1 version']
     },
-    dist: {
+    build: {
         files: [{
             expand: true,
-            cwd: '.tmp/styles/',
+            cwd: 'build/css/',
             src: '**/*.css',
-            dest: '.tmp/styles/'
+            dest: 'build/css/'
         }]
     }
 }
