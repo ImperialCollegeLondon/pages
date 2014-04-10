@@ -5,6 +5,24 @@ body {
   margin: 1em auto;
   padding: 1em;
 }
+button {
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.5em;
+  background: #EEE;
+  border: 1px solid #888;
+  box-shadow: 3px 3px #CCC;
+  transition: all 0.25s ease-in-out;
+}
+button:hover {
+  background: white;
+}
+button:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
 h1 {
   font-size: 5rem;
 }
