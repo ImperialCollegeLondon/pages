@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GisMOH</title>
+
+        <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Sans+Pro:400,700">
+        <!--build:css(build) /css/gismoh.css-->
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/gismoh.css">
+        <!--endbuild-->
+    </head>
+    <body>
+         <h1>GisMOH - Design</h1>
+
+         <section>
+             <h1>Overview</h1>
+             <p class="lead">The GisMOH System is designed to provide clinicians with important insights into the proliferation of MRSA within their healthcare institutions. In order to do this GisMOH must interface with a variety of Hospital Information Systems (HIS). These hospital systems range from aging Patient Administration Systems (PAS) and Laboratory Information Management Systems (LIMS) to cutting edge new systems supporting modern standards such as the Health Level 7 (HL-7) messaging protocol. </p>
+             <object data="/images/gismoh_level0.svg" alt="GisMOH Overview, Patient and Movement data comes from the Patient Administation System (PAS) and the Lab Information System (Meditec) and feeds into the GisMOH System, in the furture a genomic pipeline will deliver the whole genome sequences">
+             </object>
+             <p>The current system excludes the Genome pipline as this is a future deliverable for the project.</p>
+         </section>
+
+         <section class="current">
+             <h1>Modular, Single-server system</h1>
+            <p>The GisMOH system is split into several components, each set of components having a specific function, the modular
+                design allows for the system to be easily modified to accept new data types or to perform new analysis.</p>
+
+            <p>Each component can be classed as either :
+                <ul class="unstyled">
+                    <li>a <strong>Store</strong> – a connection to a database that abstracts concepts such as tables (RDBMS) or documents (Couchbase) from objects such as Patient</li>
+                    <li>a <strong>Module</strong> – components that add data types and functionality. i.e. the Antibiogram module.</li>
+                    <li>or an <strong>Interface</strong> – components that translate data from one format to another, i.e. from Meditech data to Isolate and Antibiogram objects.</li>
+                </ul>
+            </p>
+
+         </section>
+
+         <section>
+             <h1>Scaling up, the ideal multi-server System</h1>
+         </section>
+
+
+
+    </body>
+</html>
