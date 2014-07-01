@@ -121,26 +121,26 @@ p
     }
 }
 
+section.class
+{
+    border-left : 4px solid #EEE;
+    padding-left : 1em;
+}
+
 canvas
 {
     border: 2px solid #CCC;
-    max-width: 100%;
-
-    &:after
-    {
-        content : 'PhyloCanvas';
-        color: #CCC;
-        float: right;
-    }
-
     z-index: -1;
 }
 
 #phylo
 {
     box-sizing: border-box;
-    min-height: 30em;
-    min-width: 300px;
+    width: 600px;
+    height: 400px;
+    float: right;
+
+    vertical-align: middle;
 }
 
 #api
@@ -164,6 +164,12 @@ pre.code
 .light
 {
     font-weight: 100;
+}
+
+.note
+{
+  .light;
+  font-style: italic;
 }
 
 @media (max-width:600px) {

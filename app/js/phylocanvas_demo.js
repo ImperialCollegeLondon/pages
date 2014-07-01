@@ -4,6 +4,7 @@
         $ = document.querySelectorAll.bind(document);
 
     function init(){
+
        var phylo = new PC.Tree('phylo');
         phylo.load('data/EARSS.nwk');
 
