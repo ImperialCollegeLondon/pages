@@ -4,15 +4,10 @@ body {
   line-height: 18pt;
   max-width: 1024px;
   font-weight: 300;
-  text-align: center;
 }
-svg {
-  font-family: "Source Sans Pro";
-  font-size: 14pt;
-  line-height: 18pt;
-}
-object {
-  text-align: center;
+img {
+  margin: 1rem auto;
+  display: block;
 }
 section {
   border-top: 1px solid #CCC;

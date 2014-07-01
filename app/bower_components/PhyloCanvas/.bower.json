@@ -1,17 +1,16 @@
 {
   "name": "PhyloCanvas",
-  "version": "1.2.2",
+  "version": "1.2.20",
   "dependencies": {},
   "devDependencies": {},
   "homepage": "https://github.com/CIPowell/PhyloCanvas",
-  "_release": "1.2.2",
+  "_release": "1.2.20",
   "_resolution": {
     "type": "version",
-    "tag": "v1.2.2",
-    "commit": "52e57c318d1753dcaeff49c1b128fce705e9d329"
+    "tag": "v1.2.20",
+    "commit": "9454bf54c83c2313d27f2ba15cddf520c5505942"
   },
   "_source": "git://github.com/CIPowell/PhyloCanvas.git",
-  "_target": "~1.2.2",
-  "_originalSource": "PhyloCanvas",
-  "_direct": true
+  "_target": "*",
+  "_originalSource": "PhyloCanvas"
 }

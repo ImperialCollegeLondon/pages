@@ -81,20 +81,20 @@ p.answer:before {
   vertical-align: top;
   margin-right: 0.5em;
 }
+section.class {
+  border-left: 4px solid #EEE;
+  padding-left: 1em;
+}
 canvas {
   border: 2px solid #CCC;
-  max-width: 100%;
   z-index: -1;
-}
-canvas:after {
-  content: 'PhyloCanvas';
-  color: #CCC;
-  float: right;
 }
 #phylo {
   box-sizing: border-box;
-  min-height: 30em;
-  min-width: 300px;
+  width: 600px;
+  height: 400px;
+  float: right;
+  vertical-align: middle;
 }
 #api {
   box-sizing: border-box;
@@ -111,6 +111,10 @@ pre.code {
 }
 .light {
   font-weight: 100;
+}
+.note {
+  font-weight: 100;
+  font-style: italic;
 }
 @media (max-width: 600px) {
   body {
