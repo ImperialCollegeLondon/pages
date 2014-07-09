@@ -2,7 +2,6 @@ body {
   font-family: "Source Sans Pro";
   font-size: 14pt;
   line-height: 18pt;
-  max-width: 1024px;
   font-weight: 300;
 }
 img {
@@ -93,4 +92,9 @@ dd.arg-type.boolean:before {
   font-weight: 600;
   font-style: normal;
   margin-right: 0.5em;
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
 }

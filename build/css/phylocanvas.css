@@ -1,9 +1,7 @@
 body {
   font-family: Raleway;
   font-size: 16px;
-  max-width: 1200px;
-  margin: 1em auto;
-  padding: 1em;
+  max-width: none;
 }
 button {
   display: inline-block;
@@ -91,7 +89,7 @@ canvas {
 }
 #phylo {
   box-sizing: border-box;
-  width: 600px;
+  width: 50%;
   height: 400px;
   float: right;
   vertical-align: middle;
@@ -129,6 +127,8 @@ pre.code {
     line-height: 16pt;
   }
 }
-.pc-history:before {
-  content: none;
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 1em auto;
 }
