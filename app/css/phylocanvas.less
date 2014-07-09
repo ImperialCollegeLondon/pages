@@ -32,32 +32,37 @@ button:active
     box-shadow: none;
 }
 
-h1
+h1.pageheader
 {
     font-size : 5rem;
+    border-bottom: 1px solid #CCC;
+    text-shadow: -2px 2px #EEE, 2px 2px #AAA;
 }
 
-section h1
+h1
 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    text-shadow : none;
 }
 
 h2
 {
-    margin-top: 2.5rem;
-    font-size: 2rem;
+    margin-top: 1rem;
+    font-size: 1.75rem;
     font-weight: 300;
 }
 
 h3
 {
     font-size: 1.5rem;
+    border-bottom: 1px solid #CCC;
 }
 
 h4
 {
     font-size: 1.25rem;
 }
+
 dt
 {
     font-weight: 600;
@@ -119,12 +124,6 @@ p
     }
 }
 
-section.class
-{
-    border-left : 4px solid #EEE;
-    padding-left : 1em;
-}
-
 canvas
 {
     border: 2px solid #CCC;
@@ -137,6 +136,9 @@ canvas
     width: 50%;
     height: 400px;
     float: right;
+
+    margin-left: 1em;
+    margin-bottom : 1em;
 
     vertical-align: middle;
 }
@@ -152,7 +154,6 @@ canvas
 
 pre.code
 {
-    margin-left: 1em;
     background-color: #CCC;
     border-radius: 1em;
     padding: 0.5em;

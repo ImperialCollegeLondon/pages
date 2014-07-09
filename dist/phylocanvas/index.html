@@ -10,29 +10,28 @@
     </head>
     <body>
         <div class="container">
-            <h1><span class="light">Phylo</span>Canvas</h1>
+            <h1 class="pageheader"><span class="light">Phylo</span>Canvas</h1>
         </div>
         <div class="container">
             <div id="phylo">
                 <!--PhyloCanvas will load here-->
             </div>
-            <h2>Version <b>1.2.24</b></h2>
+            <h2>Version <b>1.2.25</b></h2>
 
-            <p class="lead">This is a demonstration of the HTML5 Tree-drawing widget PhyloCanvas</p>
-            <p>PhyloCanvas is written entirely in browser-native JavaScript, using no external libraries, and uses the HTML5 Canvas element</p>
+            <p>PhyloCanvas is written entirely in browser-native JavaScript, using no external libraries, and uses the HTML5 Canvas element.</p>
+            <p>The intention of PhyloCanvas is to make a tree viewer that is as widely reusable, extensible and performant.</p>
 
-             <h1>How to use</h1>
+            <h1>How to use</h1>
             <section id="initialize">
-
-
                 <h2>Initializing</h2>
                 <p>
                     You only need 2 lines of code to get your phylocanvas instance up and running. One to initialize the viewer and a second to load the file.
                 </p>
+                <p>&nbsp;</p>
                 <pre class="code">
-    var phylocanvas = new PhyloCanvas.Tree(<i>div_name</i>, <i>[config object]</i>); // initialize your tree viewer
+var phylocanvas = new PhyloCanvas.Tree(<i>div_name</i>, <i>[config object]</i>); // initialize your tree viewer
 
-    phylocanvas.load(<i>newick_file</i>); // load your tree file</pre>
+phylocanvas.load(<i>newick_file</i>); // load your tree file</pre>
             </section>
 
             <h1>API</h1>
@@ -41,10 +40,11 @@
               <h2>PhyloCanvas.Tree</h2>
               <h3>Config Object</h3>
               <p class="note">To be expanded in v 1.3.0</p>
-                    <dl>
-                        <dt>history_collapsed - <i>boolean</i></dt>
-                            <dd>Is the history initially in the collapsed state</dd>
-                    </dl>
+              <dl>
+                  <dt>history_collapsed - <i>boolean</i></dt>
+                        <dd>Is the history initially in the collapsed state</dd>
+                </dl>
+
               <h3>Properties</h3>
                   <dl>
                       <dt>.backColour (bool/function, default : false)</dt>
@@ -59,6 +59,7 @@
                             </ul>
                         </dd>
                   </dl>
+
               <h3>Functions</h3>
                   <dl>
                       <dt class="code">.load(<i>filename/nwkstring</i>,<i>[tree_name]</i>,<i>[format]</i>)</dt>
