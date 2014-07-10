@@ -23,6 +23,27 @@
 
             <h1>How to use</h1>
             <section id="initialize">
+                <h2>Get PhyloCanvas</h2>
+                <p>There are a couple of ways to include PhyloCanvas in your project, using bower or cloning directly from github.
+
+                <h3>Bower</h3>
+                <pre class="code">$ bower install --save PhyloCanvas</pre>
+
+                <p>Then you need to include</p>
+
+                <pre class="code">&lt;link rel="stylesheet" type="text/css" href="/bower_components/PhyloCanvas/src/styles/PhyloCanvas.css"&gt;
+...
+&lt;script type="application/javascript" src="/bower_components/PhyloCanvas/src/scripts/PhyloCanvas.js"&gt;&lt;/script&gt</pre>
+
+                <h3>GitHub</h3>
+                <pre class="code">$ git clone https://github.com/ImpericalCollegeLondon/PhyloCanvas.git</pre>
+
+                <pre class="code">&lt;link rel="stylesheet" type="text/css" href="/PhyloCanvas/src/styles/PhyloCanvas.css"&gt;
+...
+&lt;script type="application/javascript" src="/PhyloCanvas/src/scripts/PhyloCanvas.js"&gt;&lt;/script&gt</pre>
+
+                <p>Remember to adjust the URL to suit the location of the PhyloCanvas code within your project</p>
+
                 <h2>Initializing</h2>
                 <p>
                     You only need 2 lines of code to get your phylocanvas instance up and running. One to initialize the viewer and a second to load the file.
@@ -193,6 +214,14 @@ phylocanvas.load(<i>newick_file</i>); // load your tree file</pre>
                 <h2>PhyloCanvas.Branch</h2>
 
                 <h3>Properties</h3>
+                    <dt>branchLength</dt>
+                        <dd>
+                            The relative length of the branch as defined in the nwk/nexus string
+                        </dd>
+                    <dt>centrex/centrey</dt>
+                        <dd>
+                            The position of the end of the node.
+                        </dd>
                     <dt>id</dt>
                         <dd>
                             The unique identifier for a node, particulary for identifying leaf nodes, this becomes the
@@ -208,10 +237,7 @@ phylocanvas.load(<i>newick_file</i>); // load your tree file</pre>
                             The position of the start of the branch (the parent nodes centrex/centrey)
                         </dd>
 
-                    <dt>centrex/centrey</dt>
-                        <dd>
-                            The position of the end of the node.
-                        </dd>
+
 
 
                 <h3>Functions</h3>
