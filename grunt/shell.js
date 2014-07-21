@@ -6,7 +6,7 @@ module.exports = {
                   cwd: 'dist'
             }
         },
-        command : 'git commit -a -m "new build"'
+        command : 'git add dist && git commit -m "new build"'
     },
     deploy: {
         options : {
@@ -21,6 +21,6 @@ module.exports = {
         options : {
             stdout: true
         },
-        command : 'git commit -a -m "new build"'
+        command : 'git add dist && git commit -m "new build"'
     }
 }
