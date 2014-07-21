@@ -11,8 +11,14 @@
     <body>
         <div class="container">
             <h1 class="pageheader"><span class="light">Phylo</span>Canvas</h1>
-        </div>
-        <div class="container">
+
+            <nav>
+                <ul>
+                    <li><a href="api.html">API</a></li>
+                    <li><a href="technical.html">Technical Documentation</a></li>
+                </ul>
+            </nav>
+
             <div id="phylo">
                 <!--PhyloCanvas will load here-->
             </div>
@@ -45,212 +51,13 @@
                 <p>Remember to adjust the URL to suit the location of the PhyloCanvas code within your project</p>
 
                 <h2>Initializing</h2>
-                <p>
-                    You only need 2 lines of code to get your phylocanvas instance up and running. One to initialize the viewer and a second to load the file.
+                <p>You only need 2 lines of code to get your phylocanvas instance up and running. One to initialize the viewer and a second to load the file.
                 </p>
-                <p>&nbsp;</p>
                 <pre class="code">
 var phylocanvas = new PhyloCanvas.Tree(<i>div_name</i>, <i>[config object]</i>); // initialize your tree viewer
 
 phylocanvas.load(<i>newick_file</i>); // load your tree file</pre>
             </section>
-
-            <h1>API</h1>
-
-            <section class="class">
-              <h2>PhyloCanvas.Tree</h2>
-              <h3>Config Object</h3>
-              <p class="note">To be expanded in v 1.3.0</p>
-              <dl>
-                  <dt>history_collapsed - <i>boolean</i></dt>
-                        <dd>Is the history initially in the collapsed state</dd>
-                </dl>
-
-              <h3>Properties</h3>
-                  <dl>
-                      <dt>.backColour (bool/function, default : false)</dt>
-                        <dd>
-                          Possible values:
-                            <ul>
-                              <li><strong>false</strong> : the branches are all coloured according to Tree.branchColour</li>
-                              <li><strong>true</strong> : leaves are coloured according to their .colour property. IF all of an Internal branches
-                                children are of the same colour the branch takes that colour, otherwise it uses Tree.branchColour</li>
-                              <li><strong>{string:rgba} function(branch)</strong> : the branch colour is determined by the colour returned by the function.
-                                Ideally the returned colour should be an RGBA value</li>
-                            </ul>
-                        </dd>
-                  </dl>
-
-              <h3>Functions</h3>
-                  <dl>
-                      <dt class="code">.load(<i>filename/nwkstring</i>,<i>[tree_name]</i>,<i>[format]</i>)</dt>
-                          <dd>
-                              <p>Parse a newick or nexus format string and draw the tree</p></p>
-                              <h4>Arguments</h4>
-                              <dl>
-                                  <dt>filename (String)</dt>
-                                  <dd>the name of the file you wish to open via AJAX or the NWK or Nexus String</dd>
-
-                                  <dt>tree_name (String)</dt>
-                                  <dd>If using nexus format, the name of the tree to draw. But default Phylocanvas picks the first tree</dd>
-
-                                  <dt>format (nexus|newick)</dt>
-                                  <dd>override the parsing algorithm for the string provided</dd>
-                              </dl>
-                          </dd>
-                      <dt class="code">.displayLabels()</dt>
-                          <dd>
-                              <p>Show the lables on the tree</p>
-                              <form>
-                                  <input type="hidden" name="test" value="test" />
-                                  <button type="button" class="tree-control" id="displayLabels">
-                                      Display Labels
-                                  </button>
-                              </form>
-                          </dd>
-
-                      <dt class="code">.hideLabels()</dt>
-                          <dd>
-                              <p>Hide the lables on the tree</p>
-                               <button class="tree-control" type="button" id="hideLabels">
-                                  Hide Labels
-                              </button>
-                          </dd>
-
-                      <dt class="code">.setTreeType(<i>type</i>)</dt>
-                          <dd>
-                              <p>Hide the lables on the tree</p>
-                              <h4>Arguments</h4>
-                              <dl>
-                                  <dt>type (String)</dt>
-                                  <dd>
-                                      <p>the name of the type of tree to change to (rectangular, radial, circular, diagonal, hierarchy)</p>
-                                      <button class="tree-type-control" type="button" pc-tree-type="rectangular" id="treeTypeRectangular">
-                                          Rectangular
-                                      </button>
-                                      <button class="tree-type-control" type="button" pc-tree-type="radial" id="treeTypeRadial">
-                                          Radial
-                                      </button>
-                                      <button class="tree-type-control" type="button" pc-tree-type="circular" id="treeTypeCircular">
-                                          Circular
-                                      </button>
-                                      <button class="tree-type-control" type="button" pc-tree-type="diagonal" id="treeTypeDiagonal">
-                                          Diagonal
-                                      </button>
-                                      <button class="tree-type-control" type="button" pc-tree-type="hierarchy" id="treeTypeHierarchy">
-                                          Hierarchy
-                                      </button>
-                                  </dd>
-                              </dl>
-                          </dd>
-              </dl>
-
-              <a name="tree-events"><h3>Events</h3></a>
-              <p>PhyloCanvas exposes a number of events that allow web pages to change according to activity within PhyoCanvas. The API also exposes a couple of helper methods to enable binding of events to the API.</p>
-              <h3>Helper Methods</h3>
-              <dl>
-                  <dt>Tree.on(<i>event name</i>, <i>handler</i>)</dt>
-                  <dt>Tree.addListener(<i>event name</i>, <i>handler</i>)</dt>
-                      <dd>add the specified <i>handler</i> to the specified <i>event name</i></dd>
-                  <!--<dt>TODO : Tree.removeListener/Tree.off</dt>-->
-              </dl>
-
-              <h3>Events</h3>
-              <dl>
-                  <dt>loading</dt>
-                      <dd>Fires when the widget starts loading a file via AJAX</dd>
-
-                  <dt>loaded</dt>
-                      <dd>Fires when a tree has completed loading.</dd>
-
-                  <dt>error</dt>
-                      <dd>
-                          Fires if an error is encountered by the loading or parsing process
-                          <h4>Properties</h4>
-                          <dl>
-                              <dt>message</dt>
-                                  <dd>The Error message</dd>
-                          </dl>
-                      </dd>
-
-                  <dt>subtree</dt>
-                      <dd>
-                          Fires when the user draws a subtree
-                          <h4>Properties</h4>
-                          <dl>
-                              <dt>node</dt>
-                                  <dd>The id of the node chosen as the new root</dd>
-                          </dl>
-                      </dd>
-
-                  <dt>typechanged</dt>
-                      <dd>
-                          Fires when the tree type is changed
-                          <h4>Properties</h4>
-                          <dl>
-                              <dt>oldType</dt>
-                                  <dd>The name of the type of tree that was being displayed before the type was changed</dd>
-
-                              <dt>newType</dt>
-                                  <dd>The name of the type of tree that the view was changed to</dd>
-                          </dl>
-                      </dd>
-
-                  <dt>selected</dt>
-                      <dd>
-                          Fires when the user selectes node(s)
-                          <h4>Properties</h4>
-                          <dl>
-                              <dt>nodes</dt>
-                                  <dd>An Array of the IDs of selected node</dd>
-                          </dl>
-                      </dd>
-
-
-              </dl>
-            </section>
-
-            <section name="api-branch">
-                <h2>PhyloCanvas.Branch</h2>
-
-                <h3>Properties</h3>
-                    <dt>branchLength</dt>
-                        <dd>
-                            The relative length of the branch as defined in the nwk/nexus string
-                        </dd>
-                    <dt>centrex/centrey</dt>
-                        <dd>
-                            The position of the end of the node.
-                        </dd>
-                    <dt>id</dt>
-                        <dd>
-                            The unique identifier for a node, particulary for identifying leaf nodes, this becomes the
-                            key to <i>Tree.branches</i>
-                        </dd>
-                    <dt>label</dt>
-                        <dd>
-                            The label shown next to the node. Blank strings will be displayed, if the label is null (default)
-                            or undefined the ID is displayed instead
-                        </dd>
-                    <dt>startx/starty</dt>
-                        <dd>
-                            The position of the start of the branch (the parent nodes centrex/centrey)
-                        </dd>
-
-
-
-
-                <h3>Functions</h3>
-                    <dt>rotate()</dt>
-                        <dd>Reverse the order of the nodes immediate children. The reverse function is available in the right-click menu</dd>
-
-            </section>
-
-
-
-
-
-
             <section id="faqs">
                 <h2>FAQs</h2>
                 <p class="question">Why Canvas and not SVG?</p>
