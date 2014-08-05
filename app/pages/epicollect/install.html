@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EpiCollect Developer Documentation</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+		<!--build:css(build) /css/gismoh.css-->
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/css/epicollect.css">
+		<!--endbuild-->
+	</head>
+	<body>
+		<header>
+			<h1><img src="/images/EpiCollect.png" alt="EpiCollect+ Logo" class="brand" /> EpiCollect+ Server</h1>
+			<h2 class="subtitle">Developer Documentation - Installation</h2>
+		</header>
+		<section id="intro">
+			<h1>Introduction</h1>
+			<p>The following installation guide shows how to set up EpiCollect on an Ubuntu server. The majority of the steps
+			are the same on any platform, aside from the installation of the LAMP server.</p>
+		</section>
+		<section>
+			<h1>Step 1: XAMP Stack</h1>
+			<p> In order to run EpiCollect+ on your own server you'll need a XAMP stack, in this case, we'll show how the
+				server could be set up using Ubuntu. Other OSs need different processes. <a href="https://www.apachefiends.org">XAMPP from Apache Friends</a>
+				can be a useful resource.</p>
+			<p>The most recent version of Apache (2.4.x) is recommended, you'll need to ensure that mod_rewrite is included. Be sure to set a root
+				password during the installation.</p>
+			<pre class="code">
+$ sudo apt-get update
+$ sudo apt-get install lamp-server^</pre>
+			<p>Then follow the on-screen instructions. <b>N.B.</b> We have not tested with the Mac OSX version of MySQL since 5.1.x but at that
+			stage there were significant issues with getting EpiCollect+ to work on OSX. </p>
+		</section>
+		<section>
+			<h1>Step 2 : Configuration</h1>
+			<p>Firstly the no-password access to the server from localhost should be disabled. </p>
+		</section>
+
+	</body>
+</html>

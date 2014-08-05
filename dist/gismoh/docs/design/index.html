@@ -12,28 +12,42 @@
          <section>
              <h1>Overview</h1>
              <p class="lead">The GisMOH System is designed to provide clinicians with important insights into the proliferation of MRSA within their healthcare institutions. In order to do this GisMOH must interface with a variety of Hospital Information Systems (HIS). These hospital systems range from aging Patient Administration Systems (PAS) and Laboratory Information Management Systems (LIMS) to cutting edge new systems supporting modern standards such as the Health Level 7 (HL-7) messaging protocol. </p>
-             <img src="/images/gismoh_level0.svg" alt="GisMOH Overview, Patient and Movement data comes from the Patient Administation System (PAS) and the Lab Information System (Meditec) and feeds into the GisMOH System, in the furture a genomic pipeline will deliver the whole genome sequences">
+             <img src="/images/Gismoh_level0.svg" alt="GisMOH Overview, Patient and Movement data comes from the Patient Administation System (PAS) and the Lab Information System (Meditech) and feeds into the GisMOH System, in the furture a genomic pipeline will deliver the whole genome sequences">
              </img>
              <p>The current system excludes the Genome pipline as this is a future deliverable for the project.</p>
          </section>
 
          <section class="current">
-             <h1>Modular, Single-server system</h1>
+             <h2>Modular, Single-server system</h2>
             <p>The GisMOH system is split into several components, each set of components having a specific function, the modular
                 design allows for the system to be easily modified to accept new data types or to perform new analysis.</p>
 
             <p>Each component can be classed as either :
                 <ul class="unstyled">
                     <li>a <strong>Store</strong> – a connection to a database that abstracts concepts such as tables (RDBMS) or documents (Couchbase) from objects such as Patient</li>
-                    <li>a <strong>Module</strong> – components that add data types and functionality. i.e. the Antibiogram module.</li>
-                    <li>or an <strong>Interface</strong> – components that translate data from one format to another, i.e. from Meditech data to Isolate and Antibiogram objects.</li>
+                    <li>a <strong>Module</strong> – components that add data types and/or Analysis functions. i.e. the Antibiogram module and the Patient Overlaps module.</li>
+                    <li>or an <strong>Interface</strong> – components that translate data from one format to another, i.e. from Meditech data to Isolate and Antibiogram objects or Parsing Patient data from
+                        CSV exports.</li>
                 </ul>
             </p>
+
+            <p>Due to limited hardware resources at Addenbrookes (the pilot environment for GisMOH), the initial development kept the various modules tightly bound to the core application.
+            To meet the objectives a system that requires little re-programming and is scalable this will need to change.</p>
+
 
          </section>
 
          <section>
-             <h1>Scaling up, the ideal multi-server System</h1>
+             <h2>Scaling up, the ideal multi-server System</h2>
+             <p>In order to produce a properly scalable and easily extensible server we need to seperate the Interfaces and modules properly from the Store.
+                 We need to develop an interface that allows different processes (microservices) that can send and recive objects and requests in a common format
+                 through a messaging layer.
+             </p>
+             <p>The scaled up system should use the defined data objects and consitent request and result objects that can be serialized as JSON and published to
+                 an AMQP server. The System should be contructed in such a fashion that if any process becomes overloaded another instance of the same process
+                 can be spun up to share the load.</p>
+
+
          </section>
 
 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EpiCollect Developer Documentation</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+		<!--build:css(build) /css/gismoh.css-->
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/css/epicollect.css">
+		<!--endbuild-->
+	</head>
+	<body>
+		<header>
+			<h1><img src="/images/EpiCollect.png" alt="EpiCollect+ Logo" class="brand" /> EpiCollect+ Server</h1>
+			<h2 class="subtitle">Developer Documentation</h2>
+		</header>
+		<section id="intro">
+			<h1>Api</h1>
+			<p class="lead">The REST API is designed to provide straightforward access to the project
+			definition and data. As such, most of the calls are similar to the calls that open parts of the web interface
+			with different file extensions.</p>
+		</section>
+		<section>
+			<dl>
+				<dt>/projects</dt>
+					<dd>
+						<p>A json list of all public projects on the server</p>
+						<h3>Paramaters</h3>
+						<dl>
+							<dt>q <span class="type">string</span></dt>
+								<dd> Query paramater, show only projects that start with this string</dd>
+							<dt>limit <span class="type">int</span></dt>
+								<dd> Only show this number of projects</dd>
+						</dl>
+					</dd>
+				<dt>/<i>&lt;project name&gt;</i></dt>
+					<dd>
+						<p><b>Default</b>: show the project homepage</p>
+						<h3>File Extensions</h2>
+							<p>Use these file extensions to modify the behaviour of the endpoint</p>
+							<dl>
+								<dt>.xml</dt>
+									<dd>XML project definition</dd>
+							</dl>
+					</dd>
+				<dt>/<i>&lt;project name&gt;</i>/<i>&lt;form name&gt;</i></dt>
+					<dd>
+						<p><b>Default</b>: show the form's datatable</p>
+						<h3>File Extensions</h2>
+							<p>Use these file extensions to modify the behaviour of the endpoint</p>
+							<dl>
+								<dt>.xml</dt>
+									<dd>XML form definition for just the current form</dd>
+								<dt>.json</dt>
+									<dd>The entries for this form in JSON format</dd>
+								<dt>.csv</dt>
+									<dd>The entries for this form in CSV format</dd>
+								<dt>.tsv</dt>
+									<dd>The entries for this form in TSV format</dd>
+							</dl>
+
+						<h3>Paramaters</h3>
+							<dl>
+								<dt>dir <span class="type">string</span></dt>
+									<dd>The sort direction, either <i>asc</i> or <i>desc</i></dd>
+								<dt>fullpaths <span class="type">boolean</span></dt>
+									<dd>Include fully-resolved (<i>true</i>) or relative to server (<i>false</i>) paths to all media </dd>
+								<dt>limit <span class="type">int</span></dt>
+									<dd>Maximum number of entries to display</dd>
+								<dt>mode <span class="type">string</span></dt>
+									<dd>If using XML, and if the value is <i>list</i> show a list of entries instead of the form definition</dd>
+								<dt>sort <span class="type">string</span></dt>
+									<dd>A field to sort by. Can be any non-media field in the form</dd>
+								<dt>start <span class="type">int</span></dt>
+									<dd>The number of entries to skip at the start of the list</dd>
+
+								<dt><i>&lt;field name&gt;</i> <span class="type">string</span></dt>
+									<dd>Filter the results to only show records that match this field/value combination</dd>
+							</dl>
+					</dd>
+			</dl>
+		</section>
+
+	</body>
+</html>

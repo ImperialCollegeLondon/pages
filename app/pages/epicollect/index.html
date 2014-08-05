@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EpiCollect Developer Documentation</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+		<!--build:css(build) /css/gismoh.css-->
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/css/epicollect.css">
+		<!--endbuild-->
+	</head>
+	<body>
+		<header>
+			<h1><img src="/images/EpiCollect.png" alt="EpiCollect+ Logo" class="brand" /> EpiCollect+ Server</h1>
+			<h2 class="subtitle">Developer Documentation</h2>
+		</header>
+		<section id="intro">
+			<h1>Introduction</h1>
+			<p class="lead">The following is intended to be a "living document" highlighting the key features and design points
+			the EpiCollect+ Server. The intention is not to provide a function-by-function documentation of the code, but rather
+			to outline the key principles of the design so it can be updated or recreated in the future.</p>
+
+			<p>The EpiCollect system is designed by default to be a mostly open system with provision for greater security when required. I.e. in instances
+			of patient-identifiable information or sensitive information, for example the spread of a disease or contaminant.</p>
+
+			<p>There is also a conscious choice within the EpiCollect+ System to provide collection and curation/simple visualisation of the data, but to stop short
+			of any analysis. Instead we provide a REST API to allow the data to be pulled out in a variety of formats and be analysed by external software, and so
+			giving the user maximum flexibility.</p>
+		</section>
+		<section id="contents">
+			<ol>
+				<li><a href="/epicollect/install.html">Installation Instructions</a></li>
+				<li><a href="/epicollect/api.html">API Endpoints</a></li>
+			</ol>
+		</section>
+
+	</body>
+</html>

@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1 class="pageheader"><span class="light">Phylo</span>Canvas </span>Canvas <span class="light">- Techincal Documentation</span></h1>
+			<h1 class="pageheader"><span class="light">Phylo</span>Canvas <span class="light">- Techincal Documentation</span></h1>
 			<nav>
 				<ul>
 					<li><a href="index.html">Intro</a></li>
@@ -18,33 +18,46 @@
 					<li><a href="technical.html">Technical Documentation</a></li>
 				</ul>
 			</nav>
-			<h2>Code Structure</h2>
-			<p class="lead">The PhyloCanvas code is Object-oriented and uses the prototype
-				of a JavaScript "class" to describe the class functions.<p>
+			<section>
+				<h2>Code Structure</h2>
+				<p class="lead">The PhyloCanvas code is Object-oriented and uses the prototype
+					of a JavaScript "class" to describe the class functions.<p>
 
-			<p>As well as providing an organisational structure for the code, using
-			the prototype means that the code for the functions isn't copied into memory
-			for each instance of PhyloCanvas.</p>
+				<p>As well as providing an organisational structure for the code, using
+				the prototype means that the code for the functions isn't copied into memory
+				for each instance of PhyloCanvas.</p>
 
-			<h3>Classes</h3>
-			<dl>
-				<dt>Branch</dt>
-					<dd>Describes an individual branch in the tree</dd>
-				<dt>Loader <i>(deprecated)</i></dt>
-					<dd>Describes the "loading" animation</dd>
-				<dt>Navigator</dt>
-					<dd>Descibes the optional overview that shows the position
-						of the current view relative to the whole tree. <i>requires work</i></dd>
-				<dt>Tree</dt>
-					<dd>
-						Describes the whole tree object, as well as the functions related to viewing the tree.
-						<i>Should possibly be split into 2 objects, the Tree and the Viewer</i></dd>
-					</dd>
+				<h3>Classes</h3>
+				<dl>
+					<dt>Branch</dt>
+						<dd>Describes an individual branch in the tree</dd>
+					<dt>Loader <i>(deprecated)</i></dt>
+						<dd>Describes the "loading" animation</dd>
+					<dt>Navigator</dt>
+						<dd>Descibes the optional overview that shows the position
+							of the current view relative to the whole tree. <i>requires work</i></dd>
+					<dt>Tree</dt>
+						<dd>
+							Describes the whole tree object, as well as the functions related to viewing the tree.
+							<i>Should possibly be split into 2 objects, the Tree and the Viewer</i></dd>
+						</dd>
 
-			</dl>
-
-
-
+				</dl>
+			</section>
+			<section>
+				<h2>Rendering</h2>
+				<p class="lead">The rendering engine for PhyloCanvas is designed
+					to minimise the amount of load that is placed on the client browser.
+					As such the rendering events only fire when the user performs an action
+					such as zooming or panning through the tree.
+				</p>
+				<p>The rendering itself is split into 2 phases, a pre-render to
+					perform all the calculations related to determining the postion
+					and layout of the tree, leaving only the actual drawing of the tree
+					at the correct positon (offset) and zoom level. </p>
+				<p>When a subtree of the main tree is redrawn from a branch or
+				a branch is rotated the tree reset and then pre-render must be re-run.</p>
+			</section>
 		</div>
 	</body>
 </html>

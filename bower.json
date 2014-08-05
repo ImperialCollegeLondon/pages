@@ -1,11 +1,11 @@
 {
-  "name": "cipowell.github.io",
+  "name": "ImperialCollegeLondon.github.io",
   "version": "0.0.7-0",
-  "homepage": "https://github.com/CIPowell/pages",
+  "homepage": "https://github.com/ImperialCollegeLondon/pages",
   "authors": [
     "Chris I Powell <chris.i.powell@gmail.com>"
   ],
-  "description": "My Personal Website",
+  "description": "Group documentation pages",
   "main": "app/index.html",
   "license": "MIT",
   "private": true,
