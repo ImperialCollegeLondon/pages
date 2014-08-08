@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GisMOH</title>
+
+		<link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Sans+Pro:400,700:f">
+		<link rel="stylesheet" href="/css/gismoh.css">
+	</head>
+	<body>
+		<h1>Deploying GisMOH</h1>
+		<p>Installing GisMOH requires the development of microservices to assimilate data from existing hospital sources. There services are not part of the
+			core of GisMOH, each installation may well require different methods/formats of data.</p>
+
+		<p>The following instructions illustrate how to install the core GisMOH library, server and frontend.</p>
+
+		<h2>Backend Installation</h2>
+		<p> The following instrauctions work for Ubuntu, for windows some packages may need to be installed using
+			binarys.</p>
+		<ol>
+		<li>
+			<h3>Make sure python (2.x) is installed</h3>
+			<pre class="code">$ sudo apt-get install python</pre>
+		</li>
+
+		<li>
+			<h3>Make sure GIT is installed</h3>
+			<pre class="code">$ sudo apt-get install git</pre>
+		</li>
+
+		<li>
+			<h3>install setuptools https://pypi.python.org/pypi/setuptools</h3>
+<pre class="code">
+$ sudo apt-get install curl
+$ curl https://bootstrap.pypa.io/ez_setup.py -o - | python
+
+# target directory probably ==  C:\inetpub\GISMOH_BE
+$ git clone https://github.com/ImperialCollegeLondon/GISMOH_BE.git <target_directory>
+$ cd &lt;target_directory&gt;
+
+$ python setup.py install</pre>
+			<p>NB: if installing on windows some libraries may fail to install, if so, pre-compiled installers can normally be found</p>
+		</li>
+		<li>
+			<h3>Create GISMOH.conf file in &lt;target_directory&gt;</h3>
+
+<pre class="code">
+e.g.
+port = '3000'
+profile_out = 'profile.out'
+time_format = '%Y-%m-%dT%H:%M:%S'
+logging = 'debug'
+db_type = 'SQLITE'
+db_constr = 'test'</pre>
+
+		<p>SQLite and MSSQL are supported. For MS SQL: create a DSN and then make db_constr the DSN name, for SQLite make this the filename,
+			it will automatically append .db</p>
+
+		<li>
+			<h3>Run the webserver
+			<pre class="code">$ python application.py</pre>
+		</li>
+	</ol>
+	<h2>Front End</h2>
+
+	<p><b>Prerequisites:</b> node.js with grunt-cli and bower installed globally. Note on pre 13.10 versions of Ubuntu node 0.6 is the latest available, and 0.10+ is needed.
+		Useful info here <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager</a></p>
+	<ol>
+		<li>
+			<h3>Install nodejs and node package manager</h3>
+<pre class="code">
+$ sudo apt-get install nodejs
+$ sudo apt-get install npm</pre>
+		</li>
+		<li>
+			<h3>Install grunt and bower</h3>
+<pre class="code">
+$ sudo npm install -g grunt-cli
+$ sudo npm install -g bower</pre>
+		</li>
+		<li>
+			<h3>Get the code</h3>
+		<pre class="code">
+$ git clone https://github.com/ImperialCollegeLondon/GISMOH_FE.git <target_directory></pre>
+		</li>
+		<li>
+			<h3>Install dependencies</h3>
+<pre class="code">
+$ npm install
+$ bower install</pre>
+		</li>
+		<li>
+			<h3>Start development server</h3>
+			<pre class="code">$ grunt serve</pre>
+		</li>
+	</ol>
+
+	<h2>Forever - node js daemon runner:</h2>
+	<p>Forever is a node package that provides a very useful way of starting daemons without needing to create services.
+		One gotcha on windows is that it doesn't remember the processes. Making it difficult to stop/restart, but closing
+		spawned windows does kill the process.<p>
+
+	<h3>for Unix/Linux/BSD/Mac OS</h3>
+	<pre class="code">$ npm install -g forever</pre>
+
+	<h3>for Windows</h3>
+	<pre class="code">$ npm install -g forever-win</pre>
+
+
+	</body>
+</html>
