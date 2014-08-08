@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EpiCollect Developer Documentation</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/css/epicollect.css">
+	</head>
+	<body>
+		<header>
+			<h1><img src="/images/Epicollect.png" alt="EpiCollect+ Logo" class="brand" /> EpiCollect+ Server<br />
+			<span class="subtitle">Developer Documentation - Installation</h1>
+		</header>
+		<section id="intro">
+			<h1>Introduction</h1>
+			<p>The following installation guide shows how to set up EpiCollect on an Ubuntu server. The majority of the steps
+			are the same on any platform, aside from the installation of the LAMP server.</p>
+		</section>
+		<section>
+			<h1>Step 1: XAMP Stack</h1>
+			<p> In order to run EpiCollect+ on your own server you'll need a XAMP stack, in this case, we'll show how the
+				server could be set up using Ubuntu. Other OSs need different processes. <a href="https://www.apachefiends.org">XAMPP from Apache Friends</a>
+				can be a useful resource.</p>
+			<p>The most recent version of Apache (2.4.x) is recommended, you'll need to ensure that mod_rewrite is included. Be sure to set a root
+				password during the installation.</p>
+			<pre class="code">
+$ sudo apt-get update
+$ sudo apt-get install lamp-server^
+$ sudo a2enmod rewrite
+$ sudo service apache2 restart</pre>
+			<p>Then follow the on-screen instructions. <b>N.B.</b> We have not tested with the Mac OSX version of MySQL since 5.1.x but at that
+			stage there were significant issues with getting EpiCollect+ to work on OSX. </p>
+
+			<p> It is also worth setting up a PHPMyAdmin instance, as this makes the next step much easier</p>
+			<p class="code">
+				$ sudo apt-get install phpmyadmin
+			</p>
+		</section>
+		<section>
+			<h1>Step 2 : Get the code</h1>
+			<p>The suggested way to install the EpiCollect+ server is using clone the source code from GitHub. In the example below
+			<span class="code">/var/www</span> is the root directory of the web server, you will need to change this according to where
+			you wish to install EpiCollect+. You should also make sure whichever directory you clone EpiCollect+ into is empty.</p>
+			<pre class="code">
+$ sudo apt-get install git
+$ cd /var/www
+$ sudo git clone https://github.com/ImperialCollegeLondon/EpiCollectplus.git .</pre>
+		</section>
+		<section>
+			<h1>Step 3 : mod_rewrite</h1>
+			<p>A rewrite rule needs to be enabled in order for the web server to correctly serve the EpiCollect pages. In an ubuntu environment the
+				apache conifguration needs to be edited, normally found in <span class="code">/etc/apache2/sites-available/default</span>
+			</p>
+
+			<p>Under the Directory directive for the folder that EpiCollect+ has been installed to (you may need to add this if you're not installing it in the
+				server's HTML root). The following lines need to be added</p>
+				<pre class="code">
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/(ec\/uploads|images|js|css)
+RewriteRule .* main.php</pre>
+		</section>
+		<section>
+			<h1>Steph 4 : Permissions</h1>
+			<p>the ec folder, and all of it's contents need to be readable and writeable.</p>
+			<p class="code">
+				$ sudo chmod -R 777 ec
+			</p>
+		</section>
+		<section>
+			<h1>Step 5 : Create Database and User</h1>
+			<p>We need to create a database and user for the EpiCollect+ server</p>
+			<pre class="code">
+$ mysql -u root -p
+mysql> create database epicollect;
+mysql> create user epicollect_user identified by 'password';
+mysql> grant SELECT, INSERT, UPDATE, DELETE, EXECUTE, CREATE TEMPORARY TABLES on epicollect.* to epicollect_user;
+		</section>
+		<section>
+			<h1>Step 6 : Configure</h1>
+			<p>Open the homepage of your EpiCollect+ Server in your favourite web browser now and you should see a configuration page asking for
+				the details of your database and user. After doing that you will be asked for the credentials of a user with full privileges to the
+				database to create the database, these are used once and then forgotten. Finally you will be prompted to create your owner user,
+				 and then login with that user. At this point installation is complete </p>
+		</section>
+	</body>
+</html>
