@@ -1,7 +1,7 @@
 {
   "name": "GISMOH_Docs",
   "author": "Chris I Powell",
-  "version": "0.0.45-1",
+  "version": "0.0.46-0",
   "repository": "https://github.com/CIPowell/GISMOH_Docs.git",
   "description": "Documentation for the GISMOH project",
   "dependencies": {},
